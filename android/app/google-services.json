@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "733423534401",
+    "firebase_url": "https://lemon-market.firebaseio.com",
+    "project_id": "lemon-market",
+    "storage_bucket": "lemon-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733423534401:android:98467df3133281d7f1e1c0",
+        "android_client_info": {
+          "package_name": "com.lemon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733423534401-54k9bideu5gbpoehmk370g99qen653bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_DWTfXkF_PW3J216QD8jeLXxWmn0RUng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733423534401-54k9bideu5gbpoehmk370g99qen653bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
