@@ -15,6 +15,7 @@ import {
   Icon,
 } from 'native-base';
 import appStyles from '../appStyles';
+import { StatusBar } from 'react-native';
 export default class PostScreen extends Component {
   constructor(props) {
     super(props);
@@ -62,6 +63,8 @@ export default class PostScreen extends Component {
     }
     axios.post('http://10.0.2.2:3000/item', { userName: this.state.userName, itemTitle: this.state.itemTitle, price: this.state.price, description: this.state.description, photo: this.state.photo })
       .then(res => {
+        StatusBar.setBackgroundColor('#f7db35');
+        StatusBar.setBarStyle('dark-content');
         console.log(res.data);
         alert("Item Posted!");
       })

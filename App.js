@@ -14,7 +14,6 @@ import {
   Badge,
   Icon
 } from 'native-base';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChatsScreen from './screens/chats';
 import PostScreen from './screens/post';
@@ -30,8 +29,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: false,
-      items: []
+      post: false
     }
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -40,21 +38,15 @@ export default class App extends Component {
       StatusBar.setBackgroundColor('#f7db35');
       StatusBar.setBarStyle('dark-content');
     }, 30);
-    // axios.get('http://10.0.2.2:3000/item')
-    //   .then(result => {
-    //     console.log(result.data);
-    //     this.setState({
-    //       items: result.data
-    //     })
-    //   })
-
-    // setTimeout(() => console.log(this.state.items), 50);
   }
+  push(value) {
+    console.log('hi')
+  }
+
   changePostState() {
     this.setState({
       post: !this.state.post
     });
-    this.componentDidMount();
   }
   render() {
     if (this.state.post === false) {
@@ -107,7 +99,7 @@ export default class App extends Component {
                   <Text style={appStyles.tabsText}>FOR SALE</Text>
                 </TabHeading>
               }>
-              <ItemsScreen items={this.state.items} />
+              <ItemsScreen />
             </Tab>
             <Tab
               heading={
@@ -115,7 +107,7 @@ export default class App extends Component {
                   <Text style={appStyles.tabsText}>POST ITEM</Text>
                 </TabHeading>
               }>
-              <PostScreen change={this.changePostState.bind(this)} />
+              <PostScreen change={this.changePostState.bind(this)} post={this.push.bind(this)} />
             </Tab>
             <Tab
               heading={

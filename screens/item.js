@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import 'react-native-get-random-values';
-// import { Overlay } from 'react-native-elements';
-import { uuid } from 'uuidv4';
 import {
   ListItem,
   Left,
@@ -31,7 +29,6 @@ export default class ItemsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: false,
       refreshing: false,
       items: []
     }
@@ -39,15 +36,30 @@ export default class ItemsScreen extends Component {
   componentDidMount() {
     axios.get('http://10.0.2.2:3000/item')
       .then(result => {
+        console.log(new Date());
         this.setState({
-          items: result.data,
-          refreshing: false
+          refreshing: false,
+          items: result.data
         })
       })
+    console.log(new Date());
+  }
+  fetch() {
+    axios.get('http://10.0.2.2:3000/item')
+      .then(result => {
+        console.log(new Date());
+        this.setState({
+          refreshing: false,
+          items: result.data
+        })
+      })
+    console.log(new Date());
   }
   _onRefresh() {
-    this.setState({ refreshing: true });
-    this.componentDidMount();
+    this.fetch();
+  }
+  push(value) {
+    console.log('hi')
   }
 
   render() {
@@ -60,7 +72,7 @@ export default class ItemsScreen extends Component {
         >
           {this.state.items.map(item => {
             return (
-              <List item={item} key={uuid()} />
+              <List item={item} key={item._id} />
             )
           }
           )}

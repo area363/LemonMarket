@@ -39,7 +39,7 @@ class List extends React.Component {
           <Body >
             <Text>{this.props.item.itemTitle}</Text>
             <Text style={{ fontWeight: 'bold' }}>${this.props.item.price}</Text>
-            <View
+            <View key={this.props.item._id}
               style={{
                 flex: 1,
                 flexDirection: 'row',
@@ -53,9 +53,6 @@ class List extends React.Component {
         </ListItem>
       )
     } else {
-
-
-
       return (
 
         <Overlay
@@ -71,7 +68,7 @@ class List extends React.Component {
             marginRight: 16,
             marginBottom: 14
           }} titleStyle={{ fontSize: 25 }} title={this.props.item.itemTitle}>
-            <View key={this.props.key} >
+            <View key={this.props.item._id}>
               <Image1
                 source={{ uri: this.props.item.photo }}
                 style={{ marginTop: 0, marginLeft: 80, width: 120, height: 120 }}
