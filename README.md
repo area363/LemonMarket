@@ -1,7 +1,7 @@
 # lemon marketplace
 A community-based mobile application where you can buy and sell items to your local neighbors.
 
-## Setup
+## setup
 Install either Android Studio or Xcode for android or ios emulator
 Run these commands in order:
 1. npm install
