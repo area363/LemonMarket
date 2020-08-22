@@ -15,7 +15,6 @@ app.get('/item', (req, res) => {
   console.log(new Date());
   Item.find({}).sort({ date: -1 })
     .then(result => {
-      console.log('g')
       res.send(result);
     })
   // findItems(req, res);
